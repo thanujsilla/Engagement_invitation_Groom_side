@@ -72,7 +72,7 @@ export const MUSIC = { src: './music/WhatsApp Audio 2026-11-04 at 5.14.21 PM (1)
 // The couple portrait section. Photo lives in public/photos (replace couple.jpg, or point src elsewhere).
 // pos = CSS object-position used to crop the photo into the arch.
 export const COUPLE_PHOTO = {
-  src: './photos/e5f3de7e-d936-4b99-94e5-81b0f84309c8.png',
+  src: './photos/image.png',
   alt: 'Nayan and Yamini',
   pos: '50% 22%',
   eyebrow: 'Two hearts · One journey',

@@ -41,14 +41,7 @@ export default function SaveTheDate() {
       </Reveal>
 
       <div className="std-foot">
-        <motion.p
-          className="std-caption"
-          initial={false}
-          animate={done ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 12, filter: 'blur(4px)' }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          {D.caption}
-        </motion.p>
+        
         <motion.div initial={false} animate={{ opacity: done ? 1 : 0.0 }} transition={{ delay: 0.9 }}>
           <Divider width={150} />
         </motion.div>
