@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 
 // ▼▼ EDIT ONCE: the final public address of your deployed invitation (no trailing slash).
 // Link previews (WhatsApp, Instagram…) need the FULL https address of the preview image.
-const SITE_URL = ''
+const SITE_URL = 'https://vysyarajus-engagement-invitation.vercel.app/'
 
 export default defineConfig({
   base: './',
