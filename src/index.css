@@ -192,8 +192,7 @@ img, svg { max-width: 100%; }
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.7), inset 0 -3px 5px rgba(90, 50, 5, 0.5);
 }
 .seal-ring { position: absolute; inset: 9px; border-radius: 50%; border: 1.5px solid rgba(110, 70, 10, 0.55); box-shadow: 0 1px 0 rgba(255, 240, 200, 0.6), inset 0 1px 0 rgba(255, 240, 200, 0.45); }
-.seal-mark { position: relative; font: 400 32px/1 var(--f-script); color: #6e460c; text-shadow: 0 1px 0 rgba(255, 235, 180, 0.7); white-space: nowrap; }
-.seal-mark em { font-style: normal; font-size: 0.6em; margin: 0 1px; }
+.seal-mark { position: relative; width: 68px; height: auto; display: block; user-select: none; pointer-events: none; }
 .seal-ping { position: absolute; inset: -4px; border-radius: 50%; border: 1.5px solid rgba(255, 224, 170, 0.65); opacity: 0; pointer-events: none; }
 .env-ready .seal-ping { animation: ringPing 2.2s ease-out infinite; }
 .env-ready .seal-ping.p2 { animation-delay: 1.1s; }

@@ -43,7 +43,6 @@ const Emboss = () => (
    Tap → seal breaks → the top flap folds back → the card slides out → it melts into the invitation. */
 export default function Envelope({ onOpen, onStart }) {
   const [phase, setPhase] = useState('loading'); // loading → ready → opening → reveal
-  const initials = `${COUPLE.groom[0]}${COUPLE.bride[0]}`;
 
   useEffect(() => {
     let alive = true;
@@ -108,7 +107,7 @@ export default function Envelope({ onOpen, onStart }) {
             <span className="seal-ping" /><span className="seal-ping p2" />
             <span className="seal-wax">
               <span className="seal-ring" />
-              <span className="seal-mark">{initials[0]}<em>&amp;</em>{initials[1]}</span>
+              <img className="seal-mark" src="./images/ny-monogram.png" alt="N &amp; Y" draggable="false" />
             </span>
           </button>
         </div>
