@@ -10,7 +10,7 @@ export default function SaveTheDate() {
   const [count, setCount] = useState(0);
   const [touched, setTouched] = useState(false);
   const fired = useRef(false);
-  const done = count >= 3;
+  const done = count >= 1;
 
   const onDone = useCallback(() => setCount((c) => c + 1), []);
 
@@ -34,18 +34,22 @@ export default function SaveTheDate() {
         <p className="lede">Scratch below to reveal our engagement date</p>
       </Reveal>
 
-      <Reveal className="scratch-row" delay={0.15}>
-        <ScratchCard index={0} label="Month" value={D.month} onDone={onDone} showHint={!touched} onTouched={() => setTouched(true)} />
-        <ScratchCard index={1} label="Day" value={D.day} onDone={onDone} onTouched={() => setTouched(true)} />
-        <ScratchCard index={2} label="Year" value={D.year} onDone={onDone} onTouched={() => setTouched(true)} />
+      <Reveal className="scratch-single" delay={0.15}>
+        <ScratchCard
+          index={0}
+          variant="full"
+          label="Our Engagement Date"
+          value={<><small>{D.month}</small><b>{D.day}</b><small>{D.year}</small></>}
+          onDone={onDone}
+          showHint={!touched}
+          onTouched={() => setTouched(true)}
+        />
       </Reveal>
 
       <div className="std-foot">
-        
         <motion.div initial={false} animate={{ opacity: done ? 1 : 0.0 }} transition={{ delay: 0.9 }}>
           <Divider width={150} />
         </motion.div>
-        {!done && <p className="std-progress">{count} of 3 revealed</p>}
       </div>
     </section>
   );

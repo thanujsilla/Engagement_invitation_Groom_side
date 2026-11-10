@@ -53,7 +53,7 @@ function paintFoil(canvas, w, h, dpr) {
   g.fillText('✦', w / 2, h / 2 - 8);
 }
 
-export default function ScratchCard({ label, value, index, onDone, showHint, onTouched }) {
+export default function ScratchCard({ label, value, index, variant, onDone, showHint, onTouched }) {
   const wrap = useRef(null);
   const cv = useRef(null);
   const st = useRef({ drawing: false, last: null, done: false, lastCheck: 0, dpr: 1, w: 0, h: 0 });
@@ -104,7 +104,7 @@ export default function ScratchCard({ label, value, index, onDone, showHint, onT
     const g = cv.current.getContext('2d');
     g.setTransform(st.current.dpr, 0, 0, st.current.dpr, 0, 0);
     g.globalCompositeOperation = 'destination-out';
-    g.lineWidth = 34;
+    g.lineWidth = variant === 'full' ? 46 : 34;
     g.lineCap = 'round';
     g.lineJoin = 'round';
     g.beginPath();
@@ -140,7 +140,7 @@ export default function ScratchCard({ label, value, index, onDone, showHint, onT
   };
 
   return (
-    <div className={`scratch scratch-${index} ${done ? 'is-done' : ''}`}>
+    <div className={`scratch scratch-${index} ${variant === 'full' ? 'scratch-full' : ''} ${done ? 'is-done' : ''}`}>
       <span className="scratch-label">{label}</span>
       <div className="scratch-box" ref={wrap}>
         <div className="scratch-value" aria-live="polite">
@@ -154,7 +154,7 @@ export default function ScratchCard({ label, value, index, onDone, showHint, onT
           onPointerMove={move}
           onPointerUp={up}
           onPointerCancel={up}
-          aria-label={`Scratch to reveal the ${label.toLowerCase()}`}
+          aria-label={`Scratch to reveal: ${label}`}
         />
         {showHint && !done && <span className="scratch-hint" aria-hidden />}
         <button className="sr-only" onClick={finish}>Reveal {label}</button>
